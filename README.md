@@ -1,7 +1,5 @@
-# Network-Security-Monitoring-System
-A comprehensive monitoring solution that detects and alerts on suspicious network activities using machine learning algorithms.
 # Network Security Monitoring System (NSMS)
-
+A comprehensive monitoring solution that detects and alerts on suspicious network activities using machine learning algorithms.
 ## Project Overview
 This script represents the initial structure of a network security monitoring system that captures traffic, applies machine learning models to detect anomalies, and integrates alerting and logging features.
 
