@@ -15,7 +15,7 @@ This script represents the initial structure of a network security monitoring sy
 
 ---
 
-## 🔭 Ongoing Enhancements
+## Ongoing Enhancements
 We are actively working on:
 Integrating advanced threat intelligence feeds (e.g., AbuseIPDB, MISP)
 Improving anomaly detection precision to reduce false positives
