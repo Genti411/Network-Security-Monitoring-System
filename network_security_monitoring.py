@@ -12,13 +12,13 @@ import threading
 import time
 import logging
 import os
-```
+
 
 ### Logger setup
 os.makedirs('logs', exist_ok=True)
 logging.basicConfig(filename='logs/security.log', level=logging.INFO, 
                     format='%(asctime)s:%(levelname)s:%(message)s')
-```
+
 
 ### Load or train anomaly detection model
 def train_model():
@@ -28,7 +28,7 @@ def train_model():
     return model
 
 model = train_model()
-```
+
 
 ### Feature extractor from packets
 def extract_features(pkt):
@@ -43,10 +43,9 @@ def extract_features(pkt):
     except Exception as e:
         logging.warning(f"Failed to extract features: {e}")
         return None
-```
+
 
 ### Packet analysis and detection
-```python
 def process_packet(pkt):
     features = extract_features(pkt)
     if features is not None:
@@ -54,14 +53,14 @@ def process_packet(pkt):
         if prediction[0] == -1:
             log_msg = f"Anomaly Detected: {pkt.summary}"
             logging.warning(log_msg)
-```
+
 
 ### Packet sniffer
 def start_sniffer():
     cap = pyshark.LiveCapture(interface='eth0')
     for pkt in cap.sniff_continuously():
         process_packet(pkt)
-```
+
 
 ### Flask API for basic dashboard
 app = Flask(__name__)
@@ -84,7 +83,7 @@ def run_monitor():
     sniffer_thread = threading.Thread(target=start_sniffer)
     sniffer_thread.daemon = True
     sniffer_thread.start()
-```
+
 
 ### Entry point
 if __name__ == "__main__":
