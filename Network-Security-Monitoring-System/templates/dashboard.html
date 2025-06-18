@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>NSMS Dashboard</title></head>
+<body>
+<h1>Network Alerts</h1>
+{% for alert in alerts %}
+<div>
+  <strong>Time:</strong> {{ alert.timestamp }}<br>
+  <strong>Source:</strong> {{ alert.src }}<br>
+  <strong>Destination:</strong> {{ alert.dst }}<br>
+  <strong>Packet Size:</strong> {{ alert.len }}<br><br>
+</div>
+{% endfor %}
+</body>
+</html>
