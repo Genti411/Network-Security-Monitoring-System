@@ -3,8 +3,6 @@
 # Network Security Monitoring System (NSMS)
 
 ## Model Training & Detection
-
-```python
 import pyshark
 import numpy as np
 import pandas as pd
@@ -17,14 +15,12 @@ import os
 ```
 
 ### Logger setup
-```python
 os.makedirs('logs', exist_ok=True)
 logging.basicConfig(filename='logs/security.log', level=logging.INFO, 
                     format='%(asctime)s:%(levelname)s:%(message)s')
 ```
 
 ### Load or train anomaly detection model
-```python
 def train_model():
     normal_data = np.random.normal(0, 1, (100, 4))
     model = IsolationForest(contamination=0.1)
@@ -35,7 +31,6 @@ model = train_model()
 ```
 
 ### Feature extractor from packets
-```python
 def extract_features(pkt):
     try:
         features = [
@@ -62,7 +57,6 @@ def process_packet(pkt):
 ```
 
 ### Packet sniffer
-```python
 def start_sniffer():
     cap = pyshark.LiveCapture(interface='eth0')
     for pkt in cap.sniff_continuously():
@@ -70,7 +64,6 @@ def start_sniffer():
 ```
 
 ### Flask API for basic dashboard
-```python
 app = Flask(__name__)
 
 @app.route("/status", methods=['GET'])
@@ -85,10 +78,8 @@ def dashboard():
         return render_template("dashboard.html", logs=lines)
     except Exception as e:
         return f"Error loading dashboard: {e}"
-```
 
 ### Run monitoring in background thread
-```python
 def run_monitor():
     sniffer_thread = threading.Thread(target=start_sniffer)
     sniffer_thread.daemon = True
@@ -96,10 +87,7 @@ def run_monitor():
 ```
 
 ### Entry point
-```python
 if __name__ == "__main__":
     run_monitor()
     app.run(host='0.0.0.0', port=5000)
-```
 
----
