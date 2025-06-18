@@ -17,14 +17,14 @@ This script represents the initial structure of a network security monitoring sy
 
 ## 🔭 Ongoing Enhancements
 We are actively working on:
-- 🔍 Integrating advanced threat intelligence feeds (e.g., AbuseIPDB, MISP)
-- 🎯 Improving anomaly detection precision to reduce false positives
-- 🧠 Incorporating semi-supervised learning and adaptive thresholds
-- 📡 Geolocation and threat severity scoring of flagged IPs
+Integrating advanced threat intelligence feeds (e.g., AbuseIPDB, MISP)
+Improving anomaly detection precision to reduce false positives
+Incorporating semi-supervised learning and adaptive thresholds
+Geolocation and threat severity scoring of flagged IPs
 
 ---
 
-## 🧪 Setup Instructions
+##  Setup Instructions
 
 ### Requirements
 ```bash
@@ -33,9 +33,9 @@ pip install scikit-learn pyshark Flask pandas numpy matplotlib
 
 ---
 
-## 🚀 Deployment Guide
+## Deployment Guide
 
-### 📦 Local Deployment
+### Local Deployment
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/nsms.git
@@ -57,7 +57,7 @@ python monitor.py
 http://localhost:5000
 ```
 
-### 🐳 Docker Deployment
+### Docker Deployment
 1. Build the Docker image:
 ```bash
 docker-compose build
@@ -75,7 +75,7 @@ http://localhost:5000
 
 4. Logs will be saved in the `./logs/` directory on your host.
 
-### ☁️ Deploy to AWS EC2
+### Deploy to AWS EC2
 1. Launch a t2.medium (or better) EC2 instance with Ubuntu.
 2. SSH into the instance:
 ```bash
@@ -95,11 +95,11 @@ sudo docker-compose up --build -d
 ```
 6. Visit `http://your-ec2-ip:5000`
 
-> 🔐 Don't forget to allow TCP port 5000 in your EC2 security group.
+> Don't forget to allow TCP port 5000 in your EC2 security group.
 
 ---
 
-## 🧠 Model Training & Detection
+## Model Training & Detection
 
 ```python
 import pyshark
